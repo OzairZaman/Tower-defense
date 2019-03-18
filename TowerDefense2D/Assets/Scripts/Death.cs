@@ -5,7 +5,7 @@ using UnityEngine;
 public class Death : MonoBehaviour {
 
     //this Death script can be on Tower and Enemy.
-    //Both the to
+    
     //so we need to check if it is on tower or Enemy.
 
     public bool isTower;
@@ -23,7 +23,7 @@ public class Death : MonoBehaviour {
         }
         
 
-        //the money script is EmptyGameObject, acts as game stats.
+        //the money script is on GameManager object, acts as game stats.
         //we could also use namespaces
         moneyScript = GameObject.Find("GameManeger").GetComponent<Money>();
 

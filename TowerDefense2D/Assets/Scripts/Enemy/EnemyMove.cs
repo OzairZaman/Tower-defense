@@ -6,6 +6,7 @@ public class EnemyMove : MonoBehaviour {
 
     public float movementSpeed;
     
+    
     // Use this for initialization
 	void Start () {
 		
@@ -14,6 +15,6 @@ public class EnemyMove : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        transform.Translate(Vector3.left*movementSpeed*Time.deltaTime);
+        this.transform.Translate(Vector3.left*movementSpeed*Time.deltaTime);
 	}
 }
