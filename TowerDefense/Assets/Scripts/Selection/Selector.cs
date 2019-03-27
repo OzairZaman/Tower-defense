@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Selector : MonoBehaviour {
-
+    public Transform towerParent;
     public GameObject[] towers;
     public GameObject[] holograms;
 
@@ -22,6 +22,19 @@ public class Selector : MonoBehaviour {
     }
 
 
+    /// <summary>
+    /// Disables the GameObjects of all referenced holograms
+    /// </summary>
+    void DisableAllHolograms()
+    {
+        // Loop through all Holograms
+        foreach (var holo in holograms)
+        {
+            // Disable hologram
+            holo.SetActive(false);
+        }
+    }
+
     // Use this for initialization
     void Start () {
 		
@@ -35,9 +48,32 @@ public class Selector : MonoBehaviour {
         {
             //try
             Placable p = hit.collider.GetComponent<Placable>();
-            if (p)
+            if (p && p.isAvailable)
             {
-                placablePoint = p.transform.position;
+                //>>Hover Mechanic<<
+                // Get hologram of current tower
+                GameObject holgram = holograms[currentTower];
+                // Activate hologram
+                holgram.SetActive(true);
+                // Position hologram to tile
+                holgram.transform.position = p.GetPivotPoint();
+
+                //>>Placement Mechanic<<
+                // If left mouse is down
+                if (Input.GetMouseButtonDown(0))
+                {
+                    //      Get the current tower prefab
+                    GameObject tower = towers[currentTower];
+                    //      Spawn a new tower
+                    GameObject clone = Instantiate(tower, towerParent);
+                    //      Position new tower to tile
+                    clone.transform.position = p.GetPivotPoint();
+
+                    //clone.po
+                    //      Tile is no longer placeable
+                    p.isAvailable = false;
+                }
+
             }
         }
 	}
