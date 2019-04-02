@@ -12,7 +12,7 @@ public class SetTower : MonoBehaviour {
     
     // Use this for initialization
 	void Start () {
-        moneyScript = GameObject.Find("GameManeger").GetComponent<Money>();
+        moneyScript = GameObject.Find("WaveManager").GetComponent<Money>();
 	}
 	
 	// Update is called once per frame

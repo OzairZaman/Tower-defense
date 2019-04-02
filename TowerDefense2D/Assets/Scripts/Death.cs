@@ -25,7 +25,7 @@ public class Death : MonoBehaviour {
 
         //the money script is on GameManager object, acts as game stats.
         //we could also use namespaces
-        moneyScript = GameObject.Find("GameManeger").GetComponent<Money>();
+        moneyScript = GameObject.Find("WaveManager").GetComponent<Money>();
 
 	}
 	
