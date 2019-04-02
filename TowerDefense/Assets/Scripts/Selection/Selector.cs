@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Selector : MonoBehaviour {
-    public Transform towerParent;
+    public Transform towerParent; // cosmetics only
+    
     public GameObject[] towers;
     public GameObject[] holograms;
 
@@ -37,22 +38,28 @@ public class Selector : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
+        DisableAllHolograms();
 	}
 	
 	// Update is called once per frame
 	void Update () {
         Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if (Physics.Raycast(mouseRay, out hit))
+        if (Physics.Raycast(mouseRay, out hit) == true)
         {
-            //try
+            //we know -
+            // it hit something
+            // what ever it hit, that info is stored in 'hit' variable
+            //(lowkey making an assumtion - what is that? we hit a tile)
+            // tile has our Placable
+            // lets try to get that
             Placable p = hit.collider.GetComponent<Placable>();
-            if (p && p.isAvailable)
+
+            if (p != null && p.isAvailable == true) //if we were able to actually get the Placable component
             {
                 //>>Hover Mechanic<<
                 // Get hologram of current tower
-                GameObject holgram = holograms[currentTower];
+                GameObject holgram = holograms[currentHolo];
                 // Activate hologram
                 holgram.SetActive(true);
                 // Position hologram to tile
@@ -75,8 +82,13 @@ public class Selector : MonoBehaviour {
                 }
 
             }
+            
         }
-	}
+        else
+        {
+            DisableAllHolograms();
+        }
+    }
 
     public void SelectTower(int _tower)
     {
