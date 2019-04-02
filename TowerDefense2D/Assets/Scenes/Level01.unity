@@ -1407,6 +1407,7 @@ GameObject:
   m_Component:
   - component: {fileID: 451536430}
   - component: {fileID: 451536431}
+  - component: {fileID: 451536432}
   m_Layer: 0
   m_Name: WaveManager
   m_TagString: Untagged
@@ -1443,17 +1444,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waveSettings:
-  - enemies: 1000
-    minSpawnRate: 0
-    maxSpawnRate: 1
-    timer: 0
-  - enemies: 0
-    minSpawnRate: 0
-    maxSpawnRate: 0
-    timer: 0
+  - enemies: 2
+    minSpawnRate: 3
+    maxSpawnRate: 5
+    delayToNext: 5
+    isRunning: 0
+  - enemies: 3
+    minSpawnRate: 2
+    maxSpawnRate: 4
+    delayToNext: 5
+    isRunning: 0
   enemyPrefabs:
   - {fileID: 1358193610328922, guid: cacfe4b8716b3d046bc8e0dab622cd88, type: 2}
+  - {fileID: 1358193610328922, guid: 0c186d55022664f4fbae2d4c6f0cceb1, type: 2}
   waveIndex: 0
+  points: []
+  enemyCount: 0
+--- !u!114 &451536432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 451536429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a6e7d0fe4bedf442adfb3f51bdaf007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  money: 0
 --- !u!1001 &463176975
 Prefab:
   m_ObjectHideFlags: 0
@@ -3195,7 +3213,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &910186719
 Transform:
   m_ObjectHideFlags: 0
@@ -4814,7 +4832,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1402428442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4854,13 +4872,15 @@ MonoBehaviour:
   waveSettings: []
   enemyPrefabs: []
   waveIndex: 0
+  points: []
+  enemyCount: 0
 --- !u!114 &1402428445
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1402428441}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c894f2abe196df1498c953e16c01c83c, type: 3}
   m_Name: 
