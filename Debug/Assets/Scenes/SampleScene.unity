@@ -584,6 +584,7 @@ GameObject:
   - component: {fileID: 1133584763}
   - component: {fileID: 1133584769}
   - component: {fileID: 1133584770}
+  - component: {fileID: 1133584771}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -730,6 +731,28 @@ MonoBehaviour:
   - {fileID: 21300004, guid: 9391d314063eff248ac352793d3cde0d, type: 3}
   - {fileID: 21300006, guid: 9391d314063eff248ac352793d3cde0d, type: 3}
   - {fileID: 21300008, guid: 9391d314063eff248ac352793d3cde0d, type: 3}
+--- !u!114 &1133584771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1133584762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10756448e21fb2c40879215228b246d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+  - hi
+  - Take Quest
+  - Go there
+  - Do this.
+  - Buy!
+  index: 0
+  option: 1
+  showDlg: 0
+  player: {fileID: 0}
+  mainCam: {fileID: 0}
 --- !u!1 &1537727384
 GameObject:
   m_ObjectHideFlags: 0
