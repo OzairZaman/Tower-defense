@@ -12,7 +12,7 @@ public class Placable : MonoBehaviour {
     /// </summary>
     /// <returns>Returns placeable position if no pivot is made</returns>
 
-    public Vector3 GetPivotPoint()
+    public Vector3 GetPivotPoint() // this function tells me where to place the tower.
     {
         if (pivotPoint == null)
         {
